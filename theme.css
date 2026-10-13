@@ -1,0 +1,12 @@
+.theme-dark {
+  --background-primary: #1e1f22;
+  --background-secondary: #26272b;
+  --text-normal: #d4d4d4;
+  --text-accent: #7aa2f7;
+  --interactive-accent: #7aa2f7;
+}
+
+.theme-light {
+  --background-primary: #fafafa;
+  --text-normal: #222;
+}
