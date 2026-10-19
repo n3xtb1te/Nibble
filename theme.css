@@ -1,27 +1,29 @@
 /* ==========================================================================
    Nibble — Obsidian theme by n3xtb1te
    --------------------------------------------------------------------------
-   1. Base settings
-   2. Shared mappings
-   3. Dark mode
-   4. Light mode
-   5. Components
+   1. Settings
+   2. Theme variables
+   3. Components
    ========================================================================== */
 
 
 /* ==========================================================================
-   1. Base settings
+   1. Settings
    ========================================================================== */
 
 body {
-  /* Background tint */
-  --nb-hue: 230;
-  --nb-sat: 15%;
+  /* Background tone */
+  --nb-hue:   230;
+  --nb-sat:   12%;
+  --nb-light: 23%;
 
-  /* Accent (default, can be overridden in Settings → Appearance) */
-  --accent-h: 88;
-  --accent-s: 62%;
-  --accent-l: 58%;
+  /* Inline code background */
+  --nb-code-offset: 8%;
+
+  /* Accent */
+  --accent-h: 85;
+  --accent-s: 65%;
+  --accent-l: 38%;
 
   /* Fonts */
   --font-interface-theme: "Monaspace Neon NF", "JetBrains Mono", monospace;
@@ -37,11 +39,33 @@ body {
 
 
 /* ==========================================================================
-   2. Shared mappings — resolve from each mode's palette
+   2. Theme variables
    ========================================================================== */
 
-.theme-dark,
-.theme-light {
+.theme-dark {
+  /* Palette */
+  --color-red-rgb:     236, 116, 142;
+  --color-orange-rgb:  242, 146, 84;
+  --color-yellow-rgb:  232, 200, 120;
+  --color-green-rgb:   146, 204, 140;
+  --color-cyan-rgb:    104, 196, 204;
+  --color-blue-rgb:    118, 160, 242;
+  --color-purple-rgb:  178, 142, 236;
+  --color-pink-rgb:    228, 132, 196;
+  --nb-color-bold-rgb: 158, 188, 244;
+
+  /* Backgrounds */
+  --background-primary:       hsl(var(--nb-hue), var(--nb-sat), var(--nb-light));
+  --background-primary-alt:   hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + 3%));
+  --background-secondary:     hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) - 3%));
+  --background-secondary-alt: hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) - 5%));
+
+  /* Text */
+  --text-normal:        hsl(var(--nb-hue), 15%, 74%);
+  --text-muted:         hsl(var(--nb-hue), 10%, 55%);
+  --text-faint:         hsl(var(--nb-hue), 9%, 55%);
+  --inline-title-color: hsl(var(--nb-hue), 20%, 92%);
+
   /* Headings */
   --h1-color: rgb(var(--color-red-rgb));
   --h2-color: rgb(var(--color-yellow-rgb));
@@ -51,53 +75,20 @@ body {
   --h6-color: rgb(var(--color-purple-rgb));
 
   /* Emphasis */
-  --bold-color:   rgb(var(--nb-bold-rgb));
+  --bold-color:   rgb(var(--nb-color-bold-rgb));
   --italic-color: rgb(var(--color-orange-rgb));
 
-  /* Focus */
-  --background-modifier-border-focus: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-}
-
-
-/* ==========================================================================
-   3. Dark mode
-   ========================================================================== */
-
-.theme-dark {
-  /* Palette */
-  --color-red-rgb:    236, 116, 142;
-  --color-orange-rgb: 242, 146, 84;
-  --color-yellow-rgb: 232, 200, 120;
-  --color-green-rgb:  146, 204, 140;
-  --color-cyan-rgb:   104, 196, 204;
-  --color-blue-rgb:   118, 160, 242;
-  --color-purple-rgb: 178, 142, 236;
-  --color-pink-rgb:   228, 132, 196;
-  --nb-bold-rgb:      158, 188, 244;
-
-  /* Backgrounds */
-  --background-primary:       hsl(var(--nb-hue), var(--nb-sat), 17%);
-  --background-primary-alt:   hsl(var(--nb-hue), var(--nb-sat), 20%);
-  --background-secondary:     hsl(var(--nb-hue), var(--nb-sat), 14%);
-  --background-secondary-alt: hsl(var(--nb-hue), var(--nb-sat), 12%);
-
-  /* Text */
-  --text-normal:        hsl(var(--nb-hue), 15%, 74%);
-  --text-muted:         hsl(var(--nb-hue), 10%, 55%);
-  --text-faint:         hsl(var(--nb-hue), 9%, 46%);
-  --text-on-accent:     hsl(var(--nb-hue), 20%, 12%);
-  --inline-title-color: hsl(var(--nb-hue), 20%, 92%);
-
   /* Buttons */
-  --interactive-normal: hsl(var(--nb-hue), var(--nb-sat), 23%);
-  --interactive-hover:  hsl(var(--nb-hue), var(--nb-sat), 27%);
+  --interactive-normal: hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + 6%));
+  --interactive-hover:  hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + 10%));
 
   /* Inputs */
-  --background-modifier-form-field: hsl(var(--nb-hue), var(--nb-sat), 14%);
+  --background-modifier-form-field: hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) - 3%));
 
   /* Borders */
-  --background-modifier-border:       hsl(var(--nb-hue), var(--nb-sat), 24%);
-  --background-modifier-border-hover: hsl(var(--nb-hue), var(--nb-sat), 32%);
+  --background-modifier-border:       hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + 7%));
+  --background-modifier-border-hover: hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + 15%));
+  --background-modifier-border-focus: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
 
   /* Hover / active in lists and menus */
   --background-modifier-hover:        hsla(var(--nb-hue), 20%, 60%, 0.08);
@@ -106,84 +97,31 @@ body {
 
 
 /* ==========================================================================
-   4. Light mode
+   3. Components
    ========================================================================== */
 
-.theme-light {
-  /* Accent — darker for contrast on a light background */
-  --accent-l: 38%;
-
-  /* Palette — darker tones for contrast on a light background */
-  --color-red-rgb:    196, 52, 92;
-  --color-orange-rgb: 196, 92, 20;
-  --color-yellow-rgb: 156, 116, 0;
-  --color-green-rgb:  52, 132, 64;
-  --color-cyan-rgb:   0, 128, 140;
-  --color-blue-rgb:   46, 96, 204;
-  --color-purple-rgb: 124, 78, 200;
-  --color-pink-rgb:   182, 56, 140;
-  --nb-bold-rgb:      52, 88, 170;
-
-  /* Backgrounds */
-  --background-primary:       hsl(var(--nb-hue), var(--nb-sat), 99%);
-  --background-primary-alt:   hsl(var(--nb-hue), var(--nb-sat), 96%);
-  --background-secondary:     hsl(var(--nb-hue), var(--nb-sat), 95%);
-  --background-secondary-alt: hsl(var(--nb-hue), var(--nb-sat), 92%);
-
-  /* Text */
-  --text-normal:        hsl(var(--nb-hue), 12%, 15%);
-  --text-muted:         hsl(var(--nb-hue), 8%, 40%);
-  --text-faint:         hsl(var(--nb-hue), 6%, 58%);
-  --inline-title-color: var(--text-normal);
-
-  /* Buttons */
-  --interactive-normal: hsl(var(--nb-hue), var(--nb-sat), 97%);
-  --interactive-hover:  hsl(var(--nb-hue), var(--nb-sat), 92%);
-
-  /* Inputs */
-  --background-modifier-form-field: hsl(var(--nb-hue), var(--nb-sat), 100%);
-
-  /* Borders */
-  --background-modifier-border:       hsl(var(--nb-hue), var(--nb-sat), 86%);
-  --background-modifier-border-hover: hsl(var(--nb-hue), var(--nb-sat), 76%);
-
-  /* Hover / active in lists and menus */
-  --background-modifier-hover:        hsla(var(--nb-hue), 20%, 30%, 0.06);
-  --background-modifier-active-hover: hsla(var(--nb-hue), 20%, 30%, 0.11);
-}
-
-
-/* ==========================================================================
-   5. Components
-   ========================================================================== */
-
-/* Bold italic — no dedicated variable, so it needs a selector */
-.theme-dark .cm-strong.cm-em,
-.theme-dark strong em,
-.theme-dark em strong,
-.theme-light .cm-strong.cm-em,
-.theme-light strong em,
-.theme-light em strong {
+/* Bold italic */
+.theme-dark :is(.cm-strong.cm-em, strong em, em strong) {
   color: rgb(var(--color-pink-rgb));
 }
 
-/* External links — no icon */
-.external-link {
+/* Inline code */
+.theme-dark :is(.markdown-rendered :not(pre) > code, .cm-s-obsidian span.cm-inline-code:not(.cm-formatting)) {
+  background-color: hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + var(--nb-code-offset)));
+}
+
+/* External links */
+.theme-dark .external-link {
   background-image: none;
   padding-right: 0;
 }
 
-/* Inputs — thin focus ring */
-body input[type]:focus,
-body input[type]:focus-visible,
-body textarea:focus,
-body textarea:focus-visible,
-body select:focus,
-body select:focus-visible {
+/* Inputs */
+body.theme-dark :is(input[type], textarea, select):is(:focus, :focus-visible) {
   box-shadow: 0 0 0 1px var(--background-modifier-border-focus);
 }
 
-/* Status bar — hidden */
-.status-bar {
+/* Status bar */
+.theme-dark .status-bar {
   display: none;
 }
