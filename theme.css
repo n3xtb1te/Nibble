@@ -14,8 +14,8 @@
 body {
   /* Background tone */
   --nb-hue:   230;
-  --nb-sat:   12%;
-  --nb-light: 23%;
+  --nb-sat:   15%;
+  --nb-light: 22%;
 
   /* Inline code background */
   --nb-code-offset: 8%;
