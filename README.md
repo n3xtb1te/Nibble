@@ -1,6 +1,6 @@
 # Nibble
 
-A calm, colorful theme for [Obsidian](https://obsidian.md) with dark and light modes, built around monospace typography.
+A calm, colorful dark theme for [Obsidian](https://obsidian.md), built around monospace typography.
 
 Nibble is a personal theme. I made it for my own everyday use, so it reflects my taste and the way I work. If it suits you too, I'd be really happy for you to use it! Feedback and ideas are always welcome.
 
@@ -21,7 +21,7 @@ Prefer a different font? You can override it in **Settings → Appearance → Fo
 
 ## Features
 
-- Dark and light modes with matching palettes
+- Dark mode only
 - Colored headings, from H1 to H6, each in its own color
 - Distinct colors for **bold**, *italic* and ***bold italic*** text
 - Buttons, inputs, borders and hover states tinted to match the background
