@@ -18,7 +18,7 @@ body {
   --nb-light: 22%;
 
   /* Inline code background */
-  --nb-code-offset: 8%;
+  --nb-code-offset: -6%;
 
   /* Accent */
   --accent-h: 85;
@@ -74,6 +74,9 @@ body {
   --h5-color: rgb(var(--color-blue-rgb));
   --h6-color: rgb(var(--color-purple-rgb));
 
+  /* Code block */
+  --code-background: hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + var(--nb-code-offset)));
+
   /* Emphasis */
   --bold-color:   rgb(var(--nb-color-bold-rgb));
   --italic-color: rgb(var(--color-orange-rgb));
@@ -103,11 +106,6 @@ body {
 /* Bold italic */
 .theme-dark :is(.cm-strong.cm-em, strong em, em strong) {
   color: rgb(var(--color-pink-rgb));
-}
-
-/* Inline code */
-.theme-dark :is(.markdown-rendered :not(pre) > code, .cm-s-obsidian span.cm-inline-code:not(.cm-formatting)) {
-  background-color: hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + var(--nb-code-offset)));
 }
 
 /* External links */
