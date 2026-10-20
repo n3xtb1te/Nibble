@@ -21,9 +21,9 @@ body {
   --nb-code-offset: -6%;
 
   /* Accent */
-  --accent-h: 85;
-  --accent-s: 65%;
-  --accent-l: 38%;
+  --accent-h: 98;
+  --accent-s: 32%;
+  --accent-l: 45%;
 
   /* Fonts */
   --font-interface-theme: "Monaspace Neon NF", "JetBrains Mono", monospace;
