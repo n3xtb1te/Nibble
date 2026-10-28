@@ -1,0 +1,43 @@
+/* ==========================================================================
+   2. Theme variables
+   ========================================================================== */
+
+.theme-dark {
+  /* Palette */
+  --color-red-rgb:     236, 116, 142;
+  --color-orange-rgb:  242, 146, 84;
+  --color-yellow-rgb:  232, 200, 120;
+  --color-green-rgb:   146, 204, 140;
+  --color-cyan-rgb:    104, 196, 204;
+  --color-blue-rgb:    118, 160, 242;
+  --color-purple-rgb:  178, 142, 236;
+  --color-pink-rgb:    228, 132, 196;
+  --nb-color-bold-rgb: 158, 188, 244;
+
+  /* Inputs */
+  --background-modifier-form-field: hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) - 3%));
+
+  /* Borders */
+  --background-modifier-border:       hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + 7%));
+  --background-modifier-border-hover: hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + 15%));
+  --background-modifier-border-focus: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+
+  /* Hover / active in lists and menus */
+  --background-modifier-hover:        hsla(var(--nb-hue), 20%, 60%, 0.08);
+  --background-modifier-active-hover: hsla(var(--nb-hue), 20%, 60%, 0.14);
+}
+
+
+/* ==========================================================================
+   3. Components
+   ========================================================================== */
+
+/* Bold italic */
+.theme-dark :is(.cm-strong.cm-em, strong em, em strong) {
+  color: rgb(var(--color-pink-rgb));
+}
+
+/* Inputs */
+body.theme-dark :is(input[type], textarea, select):is(:focus, :focus-visible) {
+  box-shadow: 0 0 0 1px var(--background-modifier-border-focus);
+}

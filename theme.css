@@ -1,29 +1,12 @@
 /* ==========================================================================
    Nibble — Obsidian theme by n3xtb1te
-   --------------------------------------------------------------------------
-   1. Settings
-   2. Theme variables
-   3. Components
-   ========================================================================== */
-
-
-/* ==========================================================================
-   1. Settings
    ========================================================================== */
 
 body {
-  /* Background tone */
-  --nb-hue:   230;
-  --nb-sat:   15%;
-  --nb-light: 22%;
-
-  /* Inline code background */
-  --nb-code-offset: -6%;
-
-  /* Accent */
-  --accent-h: 98;
-  --accent-s: 32%;
-  --accent-l: 45%;
+   /*Accent */
+   --accent-h: 97;
+   --accent-s: 42%;
+   --accent-l: 53%;
 
   /* Fonts */
   --font-interface-theme: "Monaspace Neon NF", "JetBrains Mono", monospace;
@@ -32,94 +15,50 @@ body {
 
   /* Links */
   --link-decoration:                none;
-  --link-decoration-hover:          underline;
+  --link-decoration-hover:          none;
   --link-external-decoration:       none;
-  --link-external-decoration-hover: underline;
+  --link-external-decoration-hover: none;
 }
-
-
-/* ==========================================================================
-   2. Theme variables
-   ========================================================================== */
 
 .theme-dark {
-  /* Palette */
-  --color-red-rgb:     236, 116, 142;
-  --color-orange-rgb:  242, 146, 84;
-  --color-yellow-rgb:  232, 200, 120;
-  --color-green-rgb:   146, 204, 140;
-  --color-cyan-rgb:    104, 196, 204;
-  --color-blue-rgb:    118, 160, 242;
-  --color-purple-rgb:  178, 142, 236;
-  --color-pink-rgb:    228, 132, 196;
-  --nb-color-bold-rgb: 158, 188, 244;
-
-  /* Backgrounds */
-  --background-primary:       hsl(var(--nb-hue), var(--nb-sat), var(--nb-light));
-  --background-primary-alt:   hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + 3%));
-  --background-secondary:     hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) - 3%));
-  --background-secondary-alt: hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) - 5%));
+  /* Background */
+  --background-primary:       #343642;
+  --background-primary-alt:   #3a3d4a;
+  --background-secondary:     #2d2f39;
+  --background-secondary-alt: #282a33;
 
   /* Text */
-  --text-normal:        hsl(var(--nb-hue), 15%, 74%);
-  --text-muted:         hsl(var(--nb-hue), 10%, 55%);
-  --text-faint:         hsl(var(--nb-hue), 9%, 55%);
-  --inline-title-color: hsl(var(--nb-hue), 20%, 92%);
+  --inline-title-color: #dadada;
 
   /* Headings */
-  --h1-color: rgb(var(--color-red-rgb));
-  --h2-color: rgb(var(--color-yellow-rgb));
-  --h3-color: rgb(var(--color-green-rgb));
-  --h4-color: rgb(var(--color-cyan-rgb));
-  --h5-color: rgb(var(--color-blue-rgb));
-  --h6-color: rgb(var(--color-purple-rgb));
-
-  /* Code block */
-  --code-background: hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + var(--nb-code-offset)));
+  --h1-color: #ff9191;
+  --h2-color: #ffb75f;
+  --h3-color: #7fba6b;
+  --h4-color: #2a9d8f;
+  --h5-color: #5f8aee;
+  --h6-color: #a25fac;
 
   /* Emphasis */
-  --bold-color:   rgb(var(--nb-color-bold-rgb));
-  --italic-color: rgb(var(--color-orange-rgb));
+  --bold-color:   #9ebcf4;
+  --italic-color: #f29254;
 
-  /* Buttons */
-  --interactive-normal: hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + 6%));
-  --interactive-hover:  hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + 10%));
+  /* Code block */
+  --code-background: #212529;
 
-  /* Inputs */
-  --background-modifier-form-field: hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) - 3%));
+  /* Callouts */
+  /*--callout-bug:;*/
 
-  /* Borders */
-  --background-modifier-border:       hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + 7%));
-  --background-modifier-border-hover: hsl(var(--nb-hue), var(--nb-sat), calc(var(--nb-light) + 15%));
-  --background-modifier-border-focus: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-
-  /* Hover / active in lists and menus */
-  --background-modifier-hover:        hsla(var(--nb-hue), 20%, 60%, 0.08);
-  --background-modifier-active-hover: hsla(var(--nb-hue), 20%, 60%, 0.14);
+  /* Horizontal line */
+  --hr-color: #495057;
 }
 
-
-/* ==========================================================================
-   3. Components
-   ========================================================================== */
-
-/* Bold italic */
-.theme-dark :is(.cm-strong.cm-em, strong em, em strong) {
-  color: rgb(var(--color-pink-rgb));
-}
-
-/* External links */
-.theme-dark .external-link {
+/* External link */
+.external-link {
   background-image: none;
   padding-right: 0;
 }
 
-/* Inputs */
-body.theme-dark :is(input[type], textarea, select):is(:focus, :focus-visible) {
-  box-shadow: 0 0 0 1px var(--background-modifier-border-focus);
-}
-
 /* Status bar */
-.theme-dark .status-bar {
+.status-bar {
   display: none;
 }
